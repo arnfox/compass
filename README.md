@@ -1,1 +1,1 @@
-# compass is docker to haproxy teplate proccessor
+# compass is docker to haproxy template proccessor
