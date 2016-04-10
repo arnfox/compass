@@ -79,7 +79,7 @@ func main() {
 		}
 
 	}
-
+	if len(servers) > 0 {
 	f, err := os.OpenFile(outFile, os.O_WRONLY|os.O_CREATE|os.O_TRUNC, 0644)
 	check(err)
 	defer f.Close()
@@ -87,4 +87,8 @@ func main() {
 	check(err)
 	err = tmpl.ExecuteTemplate(f, "haproxy.tmpl", servers)
 	check(err)
+        } else {
+          os.Exit(1)
+	}
+        os.Exit(0)
 }
