@@ -28,8 +28,8 @@ func main() {
 
 	colorPtr := flag.String("color", "green", "deploy color")
 	imagePtr := flag.String("image", "ss/dream", "deploy image")
-	verbPtr := flag.Bool("verbose", false, "verbose output info")
-	outFilePtr := flag.String("template", "haproxy.cfg", "output file")
+	verbPtr := flag.Bool("v", false, "verbose output info")
+	outFilePtr := flag.String("o", "haproxy.cfg", "output file")
 	socketPtr := flag.String("socket", "unix:///var/run/docker.sock", " socket to docker server")
 	flag.Parse()
 
