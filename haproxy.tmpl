@@ -37,5 +37,5 @@ backend web-app-cluster
         option forwardfor
         cookie JSESSIONID prefix
 {{range .}}
-        {{.Name}} {{.IP}}:{{.PrivatePort}} check{{end}}
+        server {{.Name}} {{.IP}}:{{.PrivatePort}} check{{end}}
         
