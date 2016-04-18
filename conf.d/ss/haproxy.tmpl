@@ -1,0 +1,13 @@
+
+frontend http-blue
+        bind :81
+        default_backend web-app-blue-cluster
+
+backend web-app-blue-cluster
+        balance leastconn
+        option httpclose
+        option forwardfor
+        cookie JSESSIONID prefix
+{{range .}}
+        server {{.Name}} {{.IP}}:{{.PrivatePort}} check{{end}}
+        
